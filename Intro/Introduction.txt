@@ -1,0 +1,70 @@
+The integration of genomics into crop breeding has become a key strategy in the constantly
+changing landscape of modern agriculture, which is characterized by an increasing demand for
+increased crop productivity and resilience to environmental challenges [Varshney et al., 2005].
+Wheat, boasting an expansive genome housing over 107,000 genes and more than 4 million genetic markers, plays a pivotal global role in feeding over a third of the world’s
+population[Mayer et al., 2014].
+Genomic Selection (GS), which was first described by [Meuwissen et al., 2001], is a new
+statistical method that might help genetic progress go faster [Heffner et al., 2010]. When
+GS was first used to breed crop species in 2007, it showed a lot of promise by speeding up
+the breeding cycle and making it easier to find better genotypes. [Bernardo and Yu, 2007].
+Using the power of high-throughput marker technologies and the right statistical methods
+[Peace et al., 2019], it chooses complex, quantitative traits based only on marker data.
+In the meantime, recurrent selection Recurrent Selection (RS), which is used to improve traits
+that are passed down quantitatively, gradually raises the frequency of favorable alleles while
+keeping genetic diversity for future selections[Hallauer and Darrah, 1985].
+This thesis is about using RGS to get short-term benefits in wheat. RGS is an extension of GS
+that uses genomic information in each breeding cycle, making the breeding process better
+by evaluating and recombining the best-selected individuals[Veenstra et al., 2020]. When
+using this method of breeding, early evaluation of selection candidates along with genomic
+prediction could greatly shorten the breeding cycle, speeding up genetic gain in the short
+term[Baertschi et al., 2021].
+The study employs multiple RGS strategies involving iterative cycles. In each cycle, inbred
+lines are selected and crossed, and 10 replications of each plant are utilized. The process
+continues through three cycles, culminating in the selection of DH lines from Cycle 3.
+Despite the advantages of RGS, challenges persist, particularly the issue of diversity loss
+[Dunckel et al., 2017]. In the context of wheat, the repeated use of superior genomes to
+enhance yield performance poses a significant challenge [Goiffon et al., 2017], as GS led
+3
+to higher genetic diversity loss than phenotypic selection by shortening the breeding cycle time[Li et al., 2022]. The dilemma lies in balancing the pursuit of improved yield with
+the need to maintain a diverse genetic base for long-term crop resilience. This challenge
+highlights the intricacies of implementing GS strategies in wheat breeding and emphasizes
+the importance of addressing genetic diversity concerns for sustainable and effective crop
+improvement. To achieve this, various selection criteria are employed to formulate diverse
+strategies for RGS, optimizing different aspects of plant breeding. These various criteria,
+which are in line with the Selection Strategy’s objectives and reflect a methodical and strategic approach to plant breeding, serve as the basis for the selection and crossing of populations
+in RGS.
+The selection criteria used are: GEGV, which looks at how closely genotypes are related
+[Lell et al., 2021], is used to choose the best candidates. RND serves as a baseline, introducing unpredictability and genetic diversity through a purely random crossing scheme. The
+Crossing Scheme CB80 mates the better half of the chosen fraction with the worse half.
+This maximizes truncation selection for quantitative traits[Cockerham and Burrows, 1980].
+The GDI strategically selects crosses with the greatest genetic distances, contributing to
+enhanced genetic diversity[Foss et al., 1993]. MAX aims to accumulate favorable alleles by
+assessing the best additive genetic effects from both parents across all loci on chromosomes
+[Daetwyler et al., 2015]. MSD utilizes the Usefulness Criterion (UC) [Schnell and Utz, 1975]
+to select crosses, achieving a balance between mean performance and genetic variance with
+specified selection intensity[Osthushenrich et al., 2017]. EMBV estimates the anticipated
+performance of the most superior gametes that a candidate contributes to the succeeding generation, provided they are selected[Müller et al., 2018]. Lastly, the UC-OCS enhances optimal cross-selection by considering within-family variance and linkage disequilibrium [Allier et al., 2019]. These criteria collectively contribute to the development of sophisticated and tailored strategies for RGS in plant breeding. Various strategies have been
+formed based on these selection criteria. These include the RND selection strategy, which
+is also the reference strategy; each cycle starts with GEGV and then uses RND criteria consistently throughout the cycle. In CB80-L, GDI-L, and MAX-L, most steps are the same as
+RND. GEGV is used for inbred line selection, and CB80, GDI, and MAX criteria are used
+for crossing inbred lines in Cycle 1. MSD-L and MAX-F employ MAX for crossing inbred
+lines, and MAX and MSD for crossing Population 1, respectively. MSD-1 is like MAX-F but
+includes MSD for selection and crossing in Cycle 2. MSD-2 is like MSD-1 but also applies
+MSD criteria at Cycle 3. EMBV uses EMBV for crossing in Cycle 2 and Cycle 3. UC-OCS,
+like MSD-1, uses UC-OCS for crossing at Cycle 2.
+In order to use RGS,we use datasets of Single Nucleotide Polymorphism (SNP) marker data,
+genotypic and wheat performance data. The marker effects of these datasets were meticulously calculated through the Best Linear Unbiased Prediction (BLUP) model, which serves
+as the genome prediction mechanism. Subsequently, a simulation was iteratively conducted
+over 1000 repetitions using different selection criteria specified for each strategy to generate
+SYN1, SYN2, SYN3, and DH lines containing yield performance as mean genomic value
+and diversity as excess heterozygosity. The SelectionTools library in the R programming environment (http://www.uni-giessen.de/population-genetics) facilitated this intricate process.
+To assess and compare the effectiveness of these strategies, they were graphically compared
+4
+with each other. Overall, the method uses a thorough and organized approach, combining
+advanced statistical methods, computer programs, and a variety of selection criteria to give a
+full picture of the short-term RGS landscape in wheat. The emphasis on detailed data preparation, simulation design, and thorough evaluations ensures the robustness and reliability of
+the study’s findings. The objectives of the present simulation study were to
+1. suggest strategies for short-term RGS based on different selection criteria and crossing
+schemes,
+2. evaluate these strategies in terms of selection gain and diversity reduction in the resulting DH lines in wheat, and
+3. compare them to the established standard method.
